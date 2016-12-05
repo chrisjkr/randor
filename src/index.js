@@ -1,3 +1,7 @@
+var hexEl = document.getElementById('hex')
+var rgbEl = document.getElementById('rgb')
+var bodyEl = document.body
+
 handler()
 
 function handler () {
@@ -5,12 +9,11 @@ function handler () {
   var rgb = hexToRgb(hex)
   var luma = getLuma(rgb)
 
-  document.getElementById('hex').innerHTML = hex
-  document.getElementById('rgb').innerHTML = rgb.rgb
-  document.getElementById('luma').innerHTML = luma
+  hexEl.innerHTML = hex
+  rgbEl.innerHTML = rgb.rgb
 
-  document.body.style.backgroundColor = hex
-  luma < 120 ? document.body.style.color = 'white' : document.body.style.color = 'black'
+  bodyEl.style.backgroundColor = hex
+  luma < 120 ? bodyEl.style.color = 'white' : bodyEl.style.color = 'black'
 }
 
 function generateColour () {
