@@ -1,5 +1,13 @@
 /* global Clipboard */
 
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://ssl.google-analytics.com/ga.js','ga');
+
+ga('create', 'UA-88337677-2', 'auto');
+ga('send', 'pageview');
+
 var hexEl = document.getElementById('hex')
 var rgbEl = document.getElementById('rgb')
 var bodyEl = document.body
@@ -10,7 +18,14 @@ var rgb
 
 hexEl.addEventListener('click', clip)
 rgbEl.addEventListener('click', clip)
-anotherEl.addEventListener('click', function () { updateColour() })
+anotherEl.addEventListener('click', function () {
+  updateColour()
+  ga('send', 'event', {
+    eventCategory: 'Button',
+    eventAction: 'click',
+    eventLabel: 'Generate colour'
+  })
+})
 
 updateColour()
 
