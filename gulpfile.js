@@ -1,9 +1,9 @@
-var gulp = require('gulp')
-var uglify = require('gulp-uglify')
-var cleanCSS = require('gulp-clean-css')
-var htmlmin = require('gulp-htmlmin')
+const gulp = require('gulp')
+const uglify = require('gulp-uglify')
+const cleanCSS = require('gulp-clean-css')
+const htmlmin = require('gulp-htmlmin')
 
-var paths = {
+const paths = {
   js: ['./src/**/*.js'],
   html: ['./src/**/*.html'],
   css: ['./src/**/*.css']
