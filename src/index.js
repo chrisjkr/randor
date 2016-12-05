@@ -3,6 +3,9 @@
 var hexEl = document.getElementById('hex')
 var rgbEl = document.getElementById('rgb')
 var bodyEl = document.body
+var flashEl = document.getElementById('flash')
+var hex
+var rgb
 
 hexEl.addEventListener('click', clip)
 rgbEl.addEventListener('click', clip)
@@ -10,8 +13,8 @@ rgbEl.addEventListener('click', clip)
 handler()
 
 function handler () {
-  var hex = generateColour()
-  var rgb = hexToRgb(hex)
+  hex = generateColour()
+  rgb = hexToRgb(hex)
   var luma = getLuma(rgb)
 
   hexEl.innerHTML = hex
@@ -42,5 +45,11 @@ function getLuma(rgb) {
 }
 
 function clip () {
-  new Clipboard('#' + this.id)
+  var c = new Clipboard('#' + this.id)
+  c.on('success', function (e) {
+    e.clearSelection()
+    flashEl.innerHTML = '<div class="text">Copied!</div>'
+    flashEl.style.backgroundColor = hex
+    flashEl.style.display = 'block'
+  })
 }
