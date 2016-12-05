@@ -10,12 +10,12 @@ var rgb
 
 hexEl.addEventListener('click', clip)
 rgbEl.addEventListener('click', clip)
-anotherEl.addEventListener('click', updateColour)
+anotherEl.addEventListener('click', function () { updateColour() })
 
 updateColour()
 
-function updateColour () {
-  hex = generateColour()
+function updateColour (thisOne) {
+  hex = thisOne ? thisOne : generateColour()
   rgb = hexToRgb(hex)
   var luma = getLuma(rgb)
 
