@@ -1,5 +1,5 @@
 node_modules
 .idea
-dist/index.html
-dist/index.css
-dist/index.js
+dist/*.html
+dist/*.css
+dist/*.js

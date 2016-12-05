@@ -1,6 +1,11 @@
+/* global Clipboard */
+
 var hexEl = document.getElementById('hex')
 var rgbEl = document.getElementById('rgb')
 var bodyEl = document.body
+
+hexEl.addEventListener('click', clip)
+rgbEl.addEventListener('click', clip)
 
 handler()
 
@@ -34,4 +39,8 @@ function hexToRgb(hex) {
 
 function getLuma(rgb) {
   return 0.2126 * rgb.r + 0.7152 * rgb.g + 0.0722 * rgb.b
+}
+
+function clip () {
+  new Clipboard('#' + this.id)
 }
