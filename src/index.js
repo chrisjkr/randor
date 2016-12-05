@@ -4,15 +4,17 @@ var hexEl = document.getElementById('hex')
 var rgbEl = document.getElementById('rgb')
 var bodyEl = document.body
 var flashEl = document.getElementById('flash')
+var anotherEl = document.getElementById('another')
 var hex
 var rgb
 
 hexEl.addEventListener('click', clip)
 rgbEl.addEventListener('click', clip)
+anotherEl.addEventListener('click', updateColour)
 
-handler()
+updateColour()
 
-function handler () {
+function updateColour () {
   hex = generateColour()
   rgb = hexToRgb(hex)
   var luma = getLuma(rgb)
