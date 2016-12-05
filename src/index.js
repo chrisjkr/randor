@@ -50,8 +50,16 @@ function clip () {
   var c = new Clipboard('#' + this.id)
   c.on('success', function (e) {
     e.clearSelection()
-    flashEl.innerHTML = '<div class="text">Copied!</div>'
-    flashEl.style.backgroundColor = hex
-    flashEl.style.display = 'block'
+    flashMessage('Copied!')
   })
+}
+
+function flashMessage (msg) {
+  flashEl.innerHTML = '<div class="text">' + msg + '</div>'
+  flashEl.style.backgroundColor = hex
+  flashEl.style.display = 'block'
+
+  setTimeout(function () {
+    flashEl.style.display = 'none'
+  }, 800)
 }
