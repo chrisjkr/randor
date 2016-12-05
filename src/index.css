@@ -1,4 +1,28 @@
 body {
-    width: 200px;
+    width: 250px;
     height: 100px;
+    font-family: monospace;
+    font-size: 20px;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    vertical-align: center;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 7px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+#hex, #rgb {
+    cursor: pointer;
 }
